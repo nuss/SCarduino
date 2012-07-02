@@ -15,7 +15,7 @@ p = SerialPort(
 Pdef(\ledTest,
 	Pbind(
 		\type, \setSerial16,
-		\port, `p,
+		\port, `p, // *must* be a Ref to the SerialPort instance, *not* the instance itself
 		\pin, 10,
 		\pinVal, Pwhite(0, 1023),
 		\dur, 0.1
