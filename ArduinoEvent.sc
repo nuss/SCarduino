@@ -1,3 +1,24 @@
+/*
+Example
+
+periodically flashing a led on pin 10. extSerialPort.sc must be installed as well.
+
+(
+Pdef(\ledTest,
+	Pbind(
+		\type, \setSerial16,
+		\port, `p,
+		\pin, 10,
+		\pinVal, Pwhite(0, 1023),
+		\dur, 0.1
+	).trace
+)
+)
+
+Pdef(\ledTest).play
+Pdef(\ledTest).clear
+*/
+
 ArduinoEvent {
 	classvar <>initDelay=0.01;
 	
