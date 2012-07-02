@@ -21,6 +21,8 @@ void loop()
       // which pin
       ctrlPin = data >> 2;
       pinMode(ctrlPin, OUTPUT);
+      // now we need the upper 2 bits
+      // of the controller-value
       hiByte = data & 3;
     } else {
       val = (hiByte << 8) + data;
