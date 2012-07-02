@@ -5,8 +5,8 @@ periodically flashing a led on pin 10. extSerialPort.sc must be installed as wel
 
 (
 p = SerialPort(
-	"/dev/tty.usbmodem26411", Ê Ê//edit to match your port. SerialPort.listDevices
-	baudrate: 38400, Ê Ê//check that baudrate is the same as in arduino sketch
+	"/dev/tty.usbmodem26411", //edit to match your port. SerialPort.listDevices
+	baudrate: 38400, //check that baudrate is the same as in arduino sketch
 	crtscts: true
 )
 )
