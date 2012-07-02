@@ -11,8 +11,10 @@ A simple test
 (
 //SerialPort.listDevices;
 p = SerialPort(
-	"/dev/tty.usbmodem26411",    //edit to match your port. SerialPort.listDevices
-	baudrate: 38400,    //check that baudrate is the same as in arduino sketch
+	//edit to match your port. SerialPort.listDevices
+	"/dev/tty.usbmodem26411",
+	//check that baudrate is the same as in arduino sketch
+	baudrate: 38400,
 	crtscts: true
 )
 )
