@@ -25,7 +25,7 @@
 
 /* Arduino code - tested with an arduino uno board
 
-int ctrlPin;      // the pin that the potty is attached to
+int ctrlPin; // the pin you're going to send data to
 byte data;
 byte hiByte;
 int val;
@@ -48,6 +48,8 @@ void loop()
       // which pin
       ctrlPin = data >> 2;
       pinMode(ctrlPin, OUTPUT);
+      // now we need the upper 2 bits
+      // of the controller-value
       hiByte = data & 3;
     } else {
       val = (hiByte << 8) + data;
@@ -77,5 +79,6 @@ boolean inArray(int item, int* thisArray, int arrSize) {
   }
   return false;
 }
+
 */
 

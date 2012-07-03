@@ -1,4 +1,4 @@
-int ctrlPin;      // the pin that the potty is attached to
+int ctrlPin; // the pin you're going to send data to
 byte data;
 byte hiByte;
 int val;
