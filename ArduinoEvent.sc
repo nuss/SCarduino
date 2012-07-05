@@ -33,12 +33,12 @@ ArduinoEvent {
 		StartUp.add({
 			Event.addEventType(\setSerial16, { 
 				if(~port.notNil and:{ ~port.isOpen }, { 
-					~port.pinValue(~pin, ~pinVal.linlin(0, 1023, 1, 1024).asInt-1);
+					~port.pinValue(~pin, ~pinVal.linlin(0, 1023, 1, 1024).asInt-1, ~timeout !? { ~timeout });
 				})
 			});
 			Event.addEventType(\setSerialOnOff, {
 				if(~port.notNil and:{ ~port.isOpen }, {
-					~port.trigger(~pin, ~trigDur);
+					~port.trigger(~pin, ~trigDur, ~timeout !? { ~timeout });
 				})
 			})
 		})
