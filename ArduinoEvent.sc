@@ -1,7 +1,7 @@
 /*
 Example
 
-periodically flashing a led on pin 10. extSerialPort.sc must be installed as well.
+periodically flashing the inbuilt led on pin 13. extSerialPort.sc must be installed as well.
 
 (
 p = SerialPort(
@@ -16,7 +16,7 @@ Pdef(\ledTest,
 	Pbind(
 		\type, \setSerial16,
 		\port, `p, // *must* be a Ref to the SerialPort instance, *not* the instance itself
-		\pin, 10,
+		\pin, 13,
 		\pinVal, Pwhite(0, 1023),
 		\dur, 0.1
 	).trace
