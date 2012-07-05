@@ -35,6 +35,11 @@ ArduinoEvent {
 				if(~port.notNil and:{ ~port.isOpen }, { 
 					~port.pinValue(~pin, ~pinVal.linlin(0, 1023, 1, 1024).asInt-1);
 				})
+			});
+			Event.addEventType(\setSerialOnOff, {
+				if(~port.notNil and:{ ~port.isOpen }, {
+					~port.trigger(~pin, ~trigDur);
+				})
 			})
 		})
 	}
