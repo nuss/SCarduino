@@ -13,7 +13,7 @@
 	}
 	
 	/* send a trigger (a short pulse) to a specified pin. All information gets packed into 2 bytes */
-	trigger { |pin, trigdur=0.001, timeout|
+	trigger { |pin, trigdur=0.1, timeout|
 		fork {
 			this.pinValue(pin, 1, timeout);
 			trigdur.wait;
