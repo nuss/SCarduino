@@ -1,4 +1,4 @@
-A couple of utilities extending SuperCollider's SerialPort-class resp. C-code for the Arduino board. The code has been tested with an Arduino UNO and Arduino 1.0.1
+A couple of utilities extending SuperCollider's SerialPort-class resp. Arduino-code for the Arduino board. The code has been tested with an Arduino UNO and Arduino 1.0.1
 
 Installation
 -----------
