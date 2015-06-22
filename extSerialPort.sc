@@ -1,17 +1,17 @@
 +SerialPort {
-	
+
 	/* send 10-bit values to a specified pin. All information gets packed into 2 bytes */
 	pinValue { |pin, value, timeout|
 		var highByte, lowByte, thisPin, thisVal;
-		thisPin = pin.asInt;
-		thisVal = value.asInt;
+		thisPin = pin.asInteger;
+		thisVal = value.asInteger;
 		if(thisVal > 1023, { Error("value must be a number between 0 and 1023").throw });
-		lowByte = thisVal & 255;
-		highByte = thisVal >> 8;
-		highByte = thisPin << 2 + highByte;
+		lowByte = thisVal.bitAnd(255);
+		highByte = thisVal.rightShift(8);
+		highByte = thisPin.leftShift(2) + highByte;
 		this.putAll(Int8Array[highByte, lowByte], timeout);
 	}
-	
+
 	/* send a trigger (a short pulse) to a specified pin. All information gets packed into 2 bytes */
 	trigger { |pin, trigdur=0.1, timeout|
 		fork {
@@ -39,7 +39,7 @@ void setup()
   Serial.begin(38400);
 }
 
-void loop() 
+void loop()
 {
   // check if data has been sent from the computer:
   if(Serial.available()) {
@@ -63,7 +63,7 @@ void loop()
         analogWrite(ctrlPin, val);
       }
     }
-    if(count%2 == 1) { 
+    if(count%2 == 1) {
       count = 0;
     } else {
       count++;

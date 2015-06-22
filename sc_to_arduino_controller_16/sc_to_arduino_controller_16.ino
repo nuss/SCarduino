@@ -9,7 +9,7 @@ int onOffPinsSize = 6;
 void setup()
 {
   // initialize the serial communication:
-  Serial.begin(38400);
+  Serial.begin(115200);
 }
 
 void loop() 
