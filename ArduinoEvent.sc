@@ -18,6 +18,7 @@ Pdef(\ledTest,
 		\port, Ref(p), // *must* be a Ref to the SerialPort instance, *not* the instance itself
 		\pin, 13,
 		\pinVal, Pwhite(0, 1023),
+		\timeout, 0.005 // default timeout between high and low byte, derived from Serialport:*put if not set
 		\dur, 0.1
 	).trace
 )
