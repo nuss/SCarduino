@@ -18,7 +18,7 @@ Pdef(\ledTest,
 		\port, Ref(p), // *must* be a Ref to the SerialPort instance, *not* the instance itself
 		\pin, 13,
 		\pinVal, Pwhite(0, 1023),
-		\timeout, 0.005 // default timeout between high and low byte, derived from Serialport:*put if not set
+		\timeout, 0.005, // default timeout between high and low byte, derived from Serialport:*put if not set
 		\dur, 0.1
 	).trace
 )
@@ -34,7 +34,7 @@ ArduinoEvent {
 		StartUp.add({
 			Event.addEventType(\setSerial16, {
 				if(~port.notNil and:{ ~port.isOpen }, {
-					~port.pinValue(~pin, ~pinVal.linlin(0, 1023, 1, 1024).asInteger-1, ~timeout !? { ~timeout });
+					~port.pinValue(~pin, ~pinVal, ~timeout !? { ~timeout });
 				})
 			});
 			Event.addEventType(\setSerialOnOff, {
