@@ -32,12 +32,12 @@ ArduinoEvent {
 
 	*initClass {
 		StartUp.add({
-			Event.addEventType(\setSerial16, {
+			Event.addEventType(\setSerial16, #{
 				if(~port.notNil and:{ ~port.isOpen }, {
 					~port.pinValue(~pin, ~pinVal, ~timeout !? { ~timeout });
 				})
 			});
-			Event.addEventType(\setSerialOnOff, {
+			Event.addEventType(\setSerialOnOff, #{
 				if(~port.notNil and:{ ~port.isOpen }, {
 					~port.trigger(~pin, ~trigDur, ~timeout !? { ~timeout });
 				})
